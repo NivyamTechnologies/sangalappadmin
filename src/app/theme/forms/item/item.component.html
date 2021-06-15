@@ -1,0 +1,166 @@
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-block">
+        <div class="col-3">
+            <marquee style="color: red;font-weight: 500;font-size: 12px;" direction="left"><i>Photograph size should be less than 500Kb and should be in JPG/PNG format.</i></marquee>
+            <label class="fileContainer">
+                                <div class="input-group mb-3">
+
+
+                        <div>
+                           
+                         
+                        <img [src]="src" alt="Add Photo" class="img-fluid rounded-circle" style="height:200px;width: 200x"/>  
+                         
+                    </div>
+               
+                </div>
+              
+                <input type="file"  [imageToDataUrl]="options"  (imageSelected)="selected($event)"  />
+            </label>
+
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">Item Id</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                                                                <label class="input-group-text"><i class="icofont icofont-ui-volume"></i></label>
+                                                              </span>
+                    <input type="text" disabled [(ngModel)]="myvar.ItemId" class="form-control" placeholder="ItemId">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">Item Name</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                                                                <label class="input-group-text"><i class="icofont icofont-queen"></i></label>
+                                                            </span>
+                    <input type="text" [(ngModel)]="myvar.ItemName" class="form-control form-control" placeholder="ItemName" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">Active</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                      <label class="input-group-text"><i class="icofont icofont-queen"></i></label>
+                     </span>
+                   
+                   <select class="form-control" [(ngModel)]="myvar.Active">
+                       <option  value="Y"> Y</option>
+                       <option  value="N">N</option>
+                   </select>
+                                                           
+                </div>
+            </div>
+        </div> 
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">Catagory</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                      <label class="input-group-text"><i class="icofont icofont-queen"></i></label>
+                     </span>
+                   
+                   <select class="form-control" [(ngModel)]="myvar.Catagory">
+                    <option *ngFor="let x of categoryList" [value]="x.categoryName">{{x.categoryName}}</option>
+                   </select>
+                                                           
+                </div>
+            </div>
+        </div> 
+
+
+
+
+
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">Item MRP</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                                                                <label class="input-group-text"><i class="icofont icofont-presentation"></i></label>
+                                                            </span>
+                    <input type="number" [(ngModel)]="myvar.ItemMrp" class="form-control form-control-capitalize" placeholder="ItemMrp" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">HSN Code</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                                                                <label class="input-group-text"><i class="icofont icofont-wifi"></i></label>
+                                                            </span>
+                    <input type="number" class="form-control form-control-uppercase" [(ngModel)]="myvar.HsnCode" placeholder="HsnCode">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">Opening Qty</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                                                                <label class="input-group-text"><i class="icofont icofont-shield"></i></label>
+                                                            </span>
+                    <input type="number" class="form-control form-control-lowercase" [(ngModel)]="myvar.Qty" placeholder="Qty">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">State SGST</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                                                                <label class="input-group-text"><i class="icofont icofont-presentation"></i></label>
+                                                            </span>
+                    <input type="number" class="form-control form-control-left" [(ngModel)]="myvar.state_taxSGST" placeholder="State SGST	">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">CENTER CGST</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                                                                <label class="input-group-text"><i class="icofont icofont-presentation"></i></label>
+                                                            </span>
+                    <input type="number" class="form-control form-control-left" [(ngModel)]="myvar.center_taxCGST" placeholder="CENTER CGST	">
+                </div>
+            </div>
+        </div>  
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">Tax Rate(IGST)</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                                                                <label class="input-group-text"><i class="icofont icofont-presentation"></i></label>
+                                                            </span>
+                    <input type="number" class="form-control form-control-left" [(ngModel)]="myvar.tex_rate" placeholder="Tax Rate	">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">Description</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                                                                <label class="input-group-text"><i class="icofont icofont-presentation"></i></label>
+                                                            </span>
+                    <input type="text" class="form-control form-control-left" [(ngModel)]="myvar.Description" placeholder="Description	">
+                </div>
+            </div>
+        </div>
+     
+
+        <div style="text-align: center; padding: 20px;"> <button class='btn btn-grd-info btn-round' (click)='ready()'>Save</button> </div>
+    </div>
+</div>

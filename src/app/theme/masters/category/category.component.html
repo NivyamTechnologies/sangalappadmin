@@ -1,0 +1,65 @@
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-block">
+      <div class="col-3">
+          <marquee style="color: red;font-weight: 500;font-size: 12px;" direction="left"><i>Photograph size should be less than 500Kb and should be in JPG/PNG format.</i></marquee>
+          <label class="fileContainer">
+                              <div class="input-group mb-3">
+
+
+                      <div>
+                         
+                       
+                      <img [src]="src" alt="Add Photo" class="img-fluid rounded-circle" style="height:200px;width: 200x"/>  
+                       
+                  </div>
+             
+              </div>
+            
+              <input type="file"  [imageToDataUrl]="options"  (imageSelected)="selected($event)"  />
+          </label>
+
+      </div>
+      <div class="row">
+          <label class="col-sm-4 col-lg-2 col-form-label">Category Id</label>
+          <div class="col-sm-8 col-lg-10">
+              <div class="input-group">
+                  <span class="input-group-prepend">
+                                                            <label class="input-group-text"><i class="icofont icofont-ui-volume"></i></label>
+                                                          </span>
+                  <input type="text" [(ngModel)]="model.categoryId" class="form-control" readonly="true" placeholder="categoryId">
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <label class="col-sm-4 col-lg-2 col-form-label">Category Name</label>
+          <div class="col-sm-8 col-lg-10">
+              <div class="input-group">
+                  <span class="input-group-prepend">
+                                                            <label class="input-group-text"><i class="icofont icofont-queen"></i></label>
+                                                        </span>
+                  <input type="text" [(ngModel)]="model.categoryName" class="form-control form-control-bold" placeholder="categoryName">
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <label class="col-sm-4 col-lg-2 col-form-label">Active</label>
+          <div class="col-sm-8 col-lg-10">
+              <div class="input-group">
+                  <span class="input-group-prepend">
+                    <label class="input-group-text"><i class="icofont icofont-queen"></i></label>
+                   </span>
+                 
+                 <select class="form-control" [(ngModel)]="model.Active">
+                     <option  value="Y"> Y</option>
+                     <option  value="N">N</option>
+                 </select>
+                                                         
+              </div>
+          </div>
+      </div> 
+      
+      <div style="text-align: center; padding: 20px;"> <button class='btn btn-grd-info btn-round' (click)='ready()'>Save</button> </div>
+  </div>
+</div>
